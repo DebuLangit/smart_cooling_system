@@ -94,3 +94,5 @@ Jika tombol darurat ditekan kapan saja, pin 2 (Interrupt 0) akan tertrigger. Kip
 
 ---
 *Dokumentasi diperbarui pada: 2026/04/27*
+
+*Video Presentasi* : https://youtu.be/4Qg7MTTjftA
