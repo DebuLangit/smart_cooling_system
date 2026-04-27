@@ -50,8 +50,6 @@ Berikut adalah konfigurasi pin yang terhubung ke Arduino:
 
 ## Logika Operasional Sistem
 
-## Logika yang Digunakan
-
 Sistem ini bekerja dengan membaca data suhu dari sensor analog yang terhubung ke pin A0, kemudian mengonversi nilai ADC (Analog to Digital Converter) menjadi tegangan dan suhu dalam satuan Celsius. Nilai suhu tersebut digunakan sebagai parameter utama dalam menentukan kondisi operasional sistem.
 
 Logika kontrol utama menggunakan struktur percabangan `if`, `else if`, dan `else` untuk membagi kondisi suhu ke dalam beberapa kategori:
