@@ -3,6 +3,8 @@
 Proyek ini adalah simulasi sistem pendingin otomatis berbasis Arduino Uno yang mengatur kecepatan kipas (DC Motor) secara dinamis berdasarkan suhu lingkungan menggunakan sensor TMP36. Sistem ini dilengkapi dengan antarmuka layar LCD, indikator visual (LED), alarm suara (Buzzer), dan fitur keselamatan (Emergency Stop).
 
 Proyek ini disimulasikan menggunakan **Tinkercad**.
+<img width="1058" height="555" alt="image" src="https://github.com/user-attachments/assets/a04139c1-1a21-4448-9f05-239a4401fa2a" />
+
 Demo:
 https://github.com/user-attachments/assets/3eb2318c-4f91-4a38-8acf-a7190fd3610f
 
