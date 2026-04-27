@@ -45,7 +45,7 @@ Berikut adalah konfigurasi pin yang terhubung ke Arduino:
 - **Piezo Buzzer**: Positif  `Pin 7`
 - **Motor DC (via NPN Transistor)**: Basis Transistor  `Pin 9` (PWM)
 - **Push Button**:
-  - Button 1 (Ubah Mode C/F)  `Pin 8`
+  - Button 1 (Ubah Mode C / F)  `Pin 8`
   - Button 2 (Darurat / Interrupt)  `Pin 2`
 
 ## Logika Operasional Sistem
