@@ -50,20 +50,25 @@ Berikut adalah konfigurasi pin yang terhubung ke Arduino:
 
 ## Logika Operasional Sistem
 
-Sistem beroperasi dengan parameter suhu berikut:
+## Logika yang Digunakan
 
-1. **Suhu < 25°C (Standby)**
-   - Kipas: **Mati** (0 RPM)
-   - Indikator: LED Merah menyala, Buzzer mati.
-2. **Suhu 25°C - 29.9°C (Normal)**
-   - Kipas: **Lambat** (PWM 100)
-   - Indikator: LED Hijau menyala.
-3. **Suhu 30°C - 35°C (Hangat)**
-   - Kipas: **Cepat** (PWM 180)
-   - Indikator: LED Kuning menyala.
-4. **Suhu > 35°C (Overheat / Kritis)**
-   - Kipas: **Maksimal** (PWM 255)
-   - Indikator: LED Merah berkedip cepat & Buzzer berbunyi (Beep).
+Sistem ini bekerja dengan membaca data suhu dari sensor analog yang terhubung ke pin A0, kemudian mengonversi nilai ADC (Analog to Digital Converter) menjadi tegangan dan suhu dalam satuan Celsius. Nilai suhu tersebut digunakan sebagai parameter utama dalam menentukan kondisi operasional sistem.
+
+Logika kontrol utama menggunakan struktur percabangan `if`, `else if`, dan `else` untuk membagi kondisi suhu ke dalam beberapa kategori:
+
+* **Suhu < 25°C (Standby):** kipas mati (PWM 0), LED merah menyala, buzzer nonaktif.
+* **Suhu 25°C - 29.9°C (Normal):** kipas berputar lambat (PWM 100), LED hijau menyala.
+* **Suhu 30°C - 35°C (Hangat):** kipas berputar cepat (PWM 180), LED kuning menyala.
+* **Suhu > 35°C (Overheat/Kritis):** kipas berjalan maksimal (PWM 255), LED merah berkedip cepat, dan buzzer aktif sebagai alarm peringatan.
+
+Pengaturan kecepatan kipas menggunakan metode **Pulse Width Modulation (PWM)**, sehingga kecepatan kipas dapat disesuaikan berdasarkan tingkat suhu yang terdeteksi.
+
+Sistem juga menyediakan tombol mode pada pin 8 untuk mengganti tampilan suhu antara Celsius (°C) dan Fahrenheit (°F) menggunakan mekanisme toggle switch. Fitur ini hanya memengaruhi tampilan LCD dan tidak mengubah logika utama pengendalian suhu.
+
+Sebagai fitur keamanan, tombol darurat pada pin 2 menggunakan **hardware interrupt (Interrupt 0)**. Ketika tombol ditekan, sistem langsung menghentikan seluruh operasi normal, mematikan kipas, LED, dan buzzer, lalu menampilkan pesan darurat pada LCD. Sistem kemudian terkunci hingga board di-reset secara manual.
+
+Dengan kombinasi sensor suhu, percabangan logika, PWM, toggle mode, dan interrupt, sistem mampu melakukan monitoring suhu secara real-time, mengontrol pendinginan otomatis, serta menyediakan mekanisme keselamatan darurat.
+
 
 **Sistem Darurat (Interrupt):**
 Jika tombol darurat ditekan kapan saja, pin 2 (Interrupt 0) akan tertrigger. Kipas, LED, dan buzzer akan langsung dimatikan, dan LCD akan mengunci tampilan dengan pesan **"SISTEM DARURAT DIMATIKAN"**. Board harus di-reset untuk mengembalikan fungsi normal.
