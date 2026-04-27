@@ -29,7 +29,8 @@ https://github.com/user-attachments/assets/3eb2318c-4f91-4a38-8acf-a7190fd3610f
 | Push Button | 2 | Tombol Mode (C/F) & Tombol Darurat |
 | Piezo Buzzer | 1 | Alarm audio |
 | Resistor | Secukupnya | Pembatas arus untuk LED & pull-down/pull-up |
-| Breadboard & Kabel Jumper | Secukupnya | Rangkaian |
+| Breadboard | 1 | Rangkaian |
+| Kabel Jumper | Secukupnya | Rangkaian |
 
 ## Skema Rangkaian (Pinout)
 
